@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI‑ассистент для барбершопов</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E3A8A',
+            accent: '#2563EB',
+            lightBg: '#F9FAFB',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-sans text-gray-700 bg-lightBg">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 bg-white shadow z-30">
+    <div class="container mx-auto px-4 py-4 flex justify-center">
+      <img src="https://www.vladosbarbershop.cz/assets/logo_with_text-XdEqkVLu.svg" alt="Vlado's Barbershop"
+        class="h-12 sm:h-14" />
+    </div>
+  </header>
+
+  <main class="pt-20 h-full overflow-y-auto snap-y snap-mandatory">
+    <!-- Hero Section -->
+    <section
+      class="snap-start h-screen flex flex-col justify-center items-center bg-gradient-to-r from-primary/10 to-white text-center px-6 py-12">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-primary max-w-3xl">
+        AI-администратор для барбершопа
+      </h1>
+      <p class="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl">
+        Виртуальный администратор, который круглосуточно отвечает в
+        мессенджерах, ведёт запись, напоминает о визите и продаёт доп‑услуги —
+        без найма дополнительного персонала.
+      </p>
+      <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl w-full">
+        <div class="text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold">+5–10 %</div>
+          <div class="mt-1 text-gray-600 text-sm sm:text-base">
+            новых записей через мессенджеры
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold">−10–30 %</div>
+          <div class="mt-1 text-gray-600 text-sm sm:text-base">
+            неявок благодаря умным‑напоминаниям
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold">+10–25 %</div>
+          <div class="mt-1 text-gray-600 text-sm sm:text-base">
+            оборота за счёт AI‑допродаж
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold">−60 %</div>
+          <div class="mt-1 text-gray-600 text-sm sm:text-base">
+            нагрузки на ресепцию (ФОТ)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits Section -->
+    <section id="benefits" class="snap-start h-screen flex flex-col justify-center bg-accent/10 px-6 md:py-0 py-8">
+      <div class="container mx-auto">
+        <h2 class="text-2xl sm:text-4xl font-bold text-center text-primary mb-4">
+          Преимущества для вашего барбершопа
+        </h2>
+        <p class="text-center text-base sm:text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
+          Повышайте эффективность, экономьте время и увеличивайте прибыль с
+          нашим AI‑ассистентом
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="bg-white rounded-2xl p-6 transition flex items-start space-x-4 border border-gray-300">
+            <div class="text-4xl text-accent">💬</div>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">
+                24/7 прием заявок
+              </h3>
+              <p class="mt-1 text-gray-600">
+                Ассистент отвечает в мессенджерах даже ночью.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 transition flex items-start space-x-4 border border-gray-300">
+            <div class="text-4xl text-accent">🚀</div>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">
+                Безграничные чаты
+              </h3>
+              <p class="mt-1 text-gray-600">
+                Обработка любого потока клиентов без простоев даже в час‑пик.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 transition flex items-start space-x-4 border border-gray-300">
+            <div class="text-4xl text-accent">⏰</div>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">
+                Умные напоминания
+              </h3>
+              <p class="mt-1 text-gray-600">
+                Снижаем неявки до −30 % и заполняем окна.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 transition flex items-start space-x-4 border border-gray-300">
+            <div class="text-4xl text-accent">💰</div>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">AI‑апсейл</h3>
+              <p class="mt-1 text-gray-600">
+                Ассистент предлагает доп‑услуги +10–25 % к чеку.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 transition flex items-start space-x-4 border border-gray-300">
+            <div class="text-4xl text-accent">🔄</div>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">Win‑back</h3>
+              <p class="mt-1 text-gray-600">
+                Возвращаем спящих клиентов через 30/60/90 дней.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 transition flex items-start space-x-4 border border-gray-300">
+            <div class="text-4xl text-accent">⭐</div>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">
+                Сбор отзывов
+              </h3>
+              <p class="mt-1 text-gray-600">
+                Повышаем рейтинг, отсеиваем негатив и собираем обратную связь.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 transition flex items-start space-x-4 border border-gray-300">
+            <div class="text-4xl text-accent">📉</div>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">
+                −60 % нагрузки
+              </h3>
+              <p class="mt-1 text-gray-600">
+                Администратор занимается сервисом, не телефоном.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 transition flex items-start space-x-4 border border-gray-300">
+            <div class="text-4xl text-accent">✅</div>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">Без ошибок</h3>
+              <p class="mt-1 text-gray-600">
+                Расписание всегда актуально, двойных броней нет.
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl p-6 transition flex items-start space-x-4 border border-gray-300">
+            <div class="text-4xl text-accent">📈</div>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">
+                Рост без затрат
+              </h3>
+              <p class="mt-1 text-gray-600">
+                Масштабируйтесь без новых сотрудников.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how" class="snap-start h-screen flex flex-col justify-center bg-white px-6 md:py-0 py-8">
+      <div class="container mx-auto max-w-3xl">
+        <h2 class="text-2xl sm:text-4xl font-bold text-center text-gray-900 mb-12">
+          Как это работает в 3 шага
+        </h2>
+        <div class="relative pl-8 sm:pl-12">
+          <div class="absolute left-6 top-0 bottom-0 w-1 bg-accent/20"></div>
+          <div class="space-y-12">
+            <div class="flex items-start space-x-6">
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full font-semibold">
+                  1
+                </div>
+                <div class="w-px bg-accent/50 flex-1 mt-2"></div>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">
+                  Клиент пишет/звонит
+                </h3>
+                <p class="mt-2 text-gray-600">
+                  ассистент ведёт общение и предлагает свободные слоты.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-6">
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full font-semibold">
+                  2
+                </div>
+                <div class="w-px bg-accent/50 flex-1 mt-2"></div>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">
+                  Запись фиксируется
+                </h3>
+                <p class="mt-2 text-gray-600">
+                  в CRM Altegio в реальном времени.
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-6">
+              <div class="flex flex-col items-center">
+                <div class="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full font-semibold">
+                  3
+                </div>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-gray-900">
+                  Ассистент ведёт клиента
+                </h3>
+                <p class="mt-2 text-gray-600">
+                  напомнит, продаст доп‑услугу, попросит отзыв.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Growth Scenarios Section -->
+    <section id="scenarios" class="snap-start h-screen flex flex-col justify-center bg-lightBg px-6 md:py-0 py-8">
+      <div class="container mx-auto max-w-6xl">
+        <h2 class="text-2xl sm:text-4xl font-bold text-center text-gray-900 mb-4">
+          Сценарии роста
+        </h2>
+        <p class="text-center text-lg sm:text-xl text-gray-700 mb-8">
+          Включены во все тарифы
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-2xl p-6 flex flex-col transition border border-gray-300">
+            <div class="flex items-center mb-4">
+              <span class="text-4xl">💝</span>
+              <h3 class="text-xl sm:text-2xl font-semibold ml-3">
+                Retention Pack
+              </h3>
+            </div>
+            <p class="text-gray-700 font-medium mb-4 text-sm sm:text-base">
+              +10–20 % повторных визитов
+            </p>
+            <ul class="list-disc list-inside text-gray-600 space-y-2 flex-grow text-sm sm:text-base">
+              <li>
+                <span class="font-medium">За 24 ч до визита:</span><br />
+                напоминание + карта «Как добраться» и прогноз погоды
+              </li>
+              <li>
+                <span class="font-medium">Через 21 день: </span><br />
+                смарт-напоминание «Пора стричься?»
+              </li>
+              <li>
+                <span class="font-medium">Через 120 дней без визитов: </span><br />
+                win-back –20 %
+              </li>
+              <li>
+                <span class="font-medium">День рождения  </span><br />нперсональный подарок
+              </li>
+            </ul>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-white rounded-2xl p-6 flex flex-col transition border border-gray-300">
+            <div class="flex items-center mb-4">
+              <span class="text-4xl">💎</span>
+              <h3 class="text-xl sm:text-2xl font-semibold ml-3">
+                Upselling Pack
+              </h3>
+            </div>
+            <p class="text-gray-700 font-medium mb-4 text-sm sm:text-base">
+              Средний чек ×1,3
+            </p>
+            <ul class="list-disc list-inside text-gray-600 space-y-2 flex-grow text-sm sm:text-base">
+              <li>
+                <span class="font-medium">Сразу после брони:</span><br />
+                предложение доп. услуг (стайлинг, уход и т.д.)
+              </li>
+            </ul>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-white rounded-2xl p-6 flex flex-col transition border border-gray-300">
+            <div class="flex items-center mb-4">
+              <span class="text-4xl">🌟</span>
+              <h3 class="text-xl sm:text-2xl font-semibold ml-3">
+                Reputation Pack
+              </h3>
+            </div>
+            <p class="text-gray-700 font-medium mb-4 text-sm sm:text-base">
+              Рейтинг + обратная связь
+            </p>
+            <ul class="list-disc list-inside text-gray-600 space-y-2 flex-grow text-sm sm:text-base">
+              <li>
+                <span class="font-medium">После визита:</span><br />
+                запрос оценки
+                <br />
+                5★ — просим отзыв<br />3★ — сохраняем негативный отзыв
+                приватно
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- One-time Implementation Fee -->
+    <section id="setup-fee" class="snap-start h-screen flex flex-col justify-center bg-white px-6 md:py-0 py-8">
+      <div class="container mx-auto max-w-3xl text-center mb-8">
+        <h2 class="text-2xl sm:text-4xl font-bold text-center text-gray-900 mb-8">
+          Цены и тарифы
+        </h2>
+        <div class="bg-lightBg rounded-2xl p-6 flex flex-col transition mb-8 border border-gray-300">
+          <h3 class="text-xl sm:text-2xl font-semibold mb-2">
+            Разовое внедрение
+          </h3>
+          <p class="text-4xl sm:text-5xl font-extrabold text-primary mb-4">
+            €400
+          </p>
+          <p class="text-gray-600 text-sm sm:text-base">
+            Обучение на ваших данных, интеграция с Altegio и настройка
+            сценариев.
+          </p>
+        </div>
+      </div>
+      <div class="container mx-auto max-w-6xl">
+        <h3 class="text-xl sm:text-2xl font-semibold mb-6 text-center">
+          Подписка
+        </h3>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-lightBg rounded-2xl p-6 flex flex-col transition border border-gray-300">
+            <h4 class="text-xl font-semibold mb-4">Start</h4>
+            <p class="text-4xl font-bold mb-4">
+              €99<span class="text-base font-normal">/мес</span>
+            </p>
+            <ul class="text-gray-600 space-y-2 flex-grow">
+              <li>💬 24/7 ответы в мессенджерах</li>
+              <li>📚 Ассистент обучен на ваших данных</li>
+              <li>📈 AI‑сценарии роста (Retention/Reputation/Upselling)</li>
+            </ul>
+          </div>
+          <div class="border-2 border-accent bg-white rounded-2xl p-6 flex flex-col transition">
+            <h4 class="text-xl font-semibold mb-4">Grow</h4>
+            <p class="text-4xl font-bold mb-4">
+              €149<span class="text-base font-normal">/мес</span>
+            </p>
+            <ul class="text-gray-600 space-y-2 flex-grow">
+              <li>✅ Всё из Start</li>
+              <li>🔗 Интеграция онлайн-записи</li>
+              <li>📊 Базовая аналитика</li>
+            </ul>
+          </div>
+          <div class="bg-lightBg rounded-2xl p-6 flex flex-col transition border border-gray-300">
+            <h4 class="text-xl font-semibold mb-4">Pro</h4>
+            <p class="text-4xl font-bold mb-4">
+              €299<span class="text-base font-normal">/мес</span>
+            </p>
+            <ul class="text-gray-600 space-y-2 flex-grow">
+              <li>📞 Голосовой AI‑ассистент</li>
+              <li>📈 Расширенная аналитика</li>
+              <li>📊 Live-дашборд и уведомления</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementation Steps Section -->
+    <section id="steps" class="snap-start h-screen flex flex-col justify-center bg-lightBg px-6 md:py-0 py-8">
+      <h2 class="text-2xl sm:text-4xl font-bold text-center text-gray-900 mb-12">
+        5 простых шагов внедрения
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Step -->
+        <div class="bg-white rounded-2xl p-6 transition border border-gray-300 flex flex-col">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full font-semibold">
+              1
+            </div>
+            <h4 class="text-xl font-semibold ml-3">Подтверждаем старт</h4>
+          </div>
+          <p class="text-gray-600">Договор + оплата</p>
+          <p class="mt-2 text-gray-600 font-medium">Срок: 1 день</p>
+          <p class="mt-2 text-gray-600 font-medium text-primary">
+            Оплата: 50 % от внедрения
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 transition border border-gray-300 flex flex-col">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full font-semibold">
+              2
+            </div>
+            <h4 class="text-xl font-semibold ml-3">Передаёте доступы</h4>
+          </div>
+          <p class="text-gray-600">
+            API-ключи WhatsApp, Instagram и Altegio по чек-листу
+          </p>
+          <p class="mt-2 text-gray-600 font-medium">Срок: 1 день</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 transition border border-gray-300 flex flex-col">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full font-semibold">
+              3
+            </div>
+            <h4 class="text-xl font-semibold ml-3">
+              Подключаем и настраиваем
+            </h4>
+          </div>
+          <p class="text-gray-600">
+            Тестовый чат, интеграция, обучение ассистента и настройка
+            сценариев
+          </p>
+          <p class="mt-2 text-gray-600 font-medium">Срок: 10 дней</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 transition border border-gray-300 flex flex-col">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full font-semibold">
+              4
+            </div>
+            <h4 class="text-xl font-semibold ml-3">Запускаем и растём</h4>
+          </div>
+          <p class="text-gray-600">
+            Переключаем бота на ваших клиентов, еженедельный отчёт
+          </p>
+          <p class="mt-2 text-gray-600 font-medium">Срок: 1 день</p>
+          <p class="mt-2 text-gray-600 font-medium text-primary">
+            Оплата: 50 % от внедрения
+          </p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 transition border border-accent flex flex-col">
+          <div class="flex items-center mb-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-full font-semibold">
+              5
+            </div>
+            <h4 class="text-xl font-semibold ml-3">Развитие и поддержка</h4>
+          </div>
+          <p class="text-gray-600">
+            Бесплатная оптимизация сценариев и доработка ответов
+          </p>
+          <p class="mt-2 text-gray-600 font-medium">Срок: 4 недели</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-lightBg px-6">
+    <div class="container mx-auto text-center text-sm text-gray-600">
+      Коммерческое предложение для Vlado's Barbershop.
+    </div>
+  </footer>
+
+  <style>
+    @media (min-width: 768px) {
+      main>section {
+        height: 100vh;
+        overflow: hidden;
+        opacity: 0.5;
+        transform: scale(0.98);
+        transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        will-change: opacity, transform;
+        position: relative;
+        z-index: 0;
+      }
+
+      main>section.active-section {
+        opacity: 1;
+        transform: scale(1);
+        z-index: 1;
+      }
+
+      main>section.leaving-section {
+        opacity: 0.3;
+        transform: scale(0.97);
+        z-index: 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      main>section {
+        height: auto !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        transform: none !important;
+        position: static !important;
+        z-index: auto !important;
+        transition: none !important;
+        /* margin-bottom: 2rem !important; */
+        padding-top: 2rem !important;
+        padding-bottom: 4rem !important;
+      }
+
+      main>section:first-child {
+        margin-top: 0 !important;
+      }
+
+      main>section:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      /* .container,
+      .max-w-6xl,
+      .max-w-3xl {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+      } */
+      .rounded-2xl {
+        border-radius: 1rem !important;
+      }
+
+      main>section h1,
+      main>section h2,
+      main>section h3,
+      main>section h4,
+      main>section h5,
+      main>section h6,
+      main>section p,
+      main>section ul,
+      main>section ol,
+      main>section li,
+      main>section div,
+      main>section span {
+        text-align: left !important;
+      }
+    }
+  </style>
+
+  <script>
+    // Full-page scroll for desktop only, robustly toggled by matchMedia
+    (function () {
+      const mq = window.matchMedia('(min-width: 768px)');
+      let enabled = false;
+      let sections = Array.from(document.querySelectorAll('main > section'));
+      let isScrolling = false;
+      let currentSection = 0;
+      let scrollTimeout = null;
+      let observer = null;
+
+      function updateSections() {
+        sections = Array.from(document.querySelectorAll('main > section'));
+      }
+
+      function setActiveSection(index, prevIndex) {
+        sections.forEach((section, i) => {
+          section.classList.remove('active-section', 'leaving-section');
+          if (i === index) {
+            section.classList.add('active-section');
+          } else if (i === prevIndex) {
+            section.classList.add('leaving-section');
+          }
+        });
+      }
+
+      function scrollToSection(index) {
+        if (index < 0 || index >= sections.length) return;
+        isScrolling = true;
+        setActiveSection(index, currentSection);
+        sections[index].scrollIntoView({ behavior: 'smooth' });
+        scrollTimeout = setTimeout(() => {
+          isScrolling = false;
+        }, 800);
+      }
+
+      function enableIntersectionObserver() {
+        if (observer) observer.disconnect();
+        observer = new window.IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                const idx = sections.indexOf(entry.target);
+                if (idx !== -1) {
+                  setActiveSection(idx, currentSection);
+                  currentSection = idx;
+                  isScrolling = false;
+                  if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = null;
+                  }
+                }
+              }
+            });
+          },
+          {
+            threshold: 0.55,
+          }
+        );
+        sections.forEach((section) => observer.observe(section));
+        setActiveSection(currentSection, null);
+      }
+
+      function onWheel(e) {
+        if (!enabled || isScrolling) return;
+        e.preventDefault();
+        updateSections();
+        if (e.deltaY > 0 && currentSection < sections.length - 1) {
+          scrollToSection(currentSection + 1);
+        } else if (e.deltaY < 0 && currentSection > 0) {
+          scrollToSection(currentSection - 1);
+        }
+      }
+
+      function onKeyDown(e) {
+        if (!enabled || isScrolling) return;
+        const keysDown = ['ArrowDown', 'PageDown', ' '];
+        const keysUp = ['ArrowUp', 'PageUp'];
+        if (keysDown.includes(e.key)) {
+          e.preventDefault();
+          updateSections();
+          if (currentSection < sections.length - 1) {
+            scrollToSection(currentSection + 1);
+          }
+        } else if (keysUp.includes(e.key)) {
+          e.preventDefault();
+          updateSections();
+          if (currentSection > 0) {
+            scrollToSection(currentSection - 1);
+          }
+        }
+      }
+
+      function enableFullPageScroll() {
+        if (enabled) return;
+        enabled = true;
+        updateSections();
+        document.addEventListener('wheel', onWheel, { passive: false });
+        document.addEventListener('keydown', onKeyDown, { passive: false });
+        enableIntersectionObserver();
+        // Set desktop styles explicitly (in case of dynamic switch)
+        sections.forEach(section => {
+          section.style.height = '100vh';
+          section.style.overflow = 'hidden';
+          section.style.position = 'relative';
+        });
+      }
+
+      function disableFullPageScroll() {
+        if (!enabled) return;
+        enabled = false;
+        document.removeEventListener('wheel', onWheel);
+        document.removeEventListener('keydown', onKeyDown);
+        if (observer) observer.disconnect();
+        // Remove animation classes and restore default styles
+        sections.forEach(section => {
+          section.classList.remove('active-section', 'leaving-section');
+          section.style.height = '';
+          section.style.overflow = '';
+          section.style.position = '';
+          section.style.transform = '';
+          section.style.opacity = '';
+          section.style.zIndex = '';
+          section.style.transition = '';
+        });
+      }
+
+      function handleMediaChange(e) {
+        updateSections();
+        if (e.matches) {
+          enableFullPageScroll();
+        } else {
+          disableFullPageScroll();
+        }
+      }
+
+      mq.addEventListener('change', handleMediaChange);
+      // Initial activation
+      handleMediaChange(mq);
+    })();
+  </script>
+</body>
+
+</html>
